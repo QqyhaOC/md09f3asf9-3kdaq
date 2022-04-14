@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+<link rel="stylesheet" type="text/css" media="all" href="11_files/style.css">
+<script>
+window.onbeforeunload = function(){
+  return "コマ問を終了してページを移動しますか？";
+}
+</script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Comamon LPIC102</title>
+
+	<script type="text/javascript">
+var xajaxRequestUri="https://ping-t.com/apps/comamon_lpic102v10/index.php";
+var xajaxDebug=false;
+var xajaxStatusMessages=false;
+var xajaxWaitCursor=true;
+var xajaxDefinedGet=0;
+var xajaxDefinedPost=1;
+var xajaxLoaded=false;
+function xajax_Syutudai(){return xajax.call("Syutudai", arguments, 1);}
+function xajax_InitInput(){return xajax.call("InitInput", arguments, 1);}
+function xajax_DispKotae(){return xajax.call("DispKotae", arguments, 1);}
+function xajax_DispSeikai(){return xajax.call("DispSeikai", arguments, 1);}
+function xajax_DispInputAnswer(){return xajax.call("DispInputAnswer", arguments, 1);}
+function xajax_ReStart(){return xajax.call("ReStart", arguments, 1);}
+	</script>
+	<script type="text/javascript" src="11_files/xajax.js"></script>
+	<script type="text/javascript">
+window.setTimeout(function () { if (!xajaxLoaded) { alert('Error: the xajax Javascript file could not be included. Perhaps the URL is incorrect?\nURL: ./lib/xajax_js/xajax.js'); } }, 6000);
+	</script>
+
+<script language="JavaScript">
+
+<!--
+
+
+
+var timeD;
+
+var myTimer;
+
+
+
+function text_focus()
+
+{
+
+
+
+	document.form1.txt0.focus();
+
+
+
+}
+
+
+
+function finish_mondai()
+
+{
+
+	//if(window.confirm('終了しますか？'))
+
+	{
+
+		top.location.replace("https://ping-t.com/modules/PremiumContents/index.php?content_id=97");
+
+	}
+
+
+
+}
+
+function disp_seikai(MondaiNo)
+
+{
+
+	xajax_DispSeikai(MondaiNo);
+
+
+
+}
+
+function disp_input_answer(MondaiNo)
+
+{
+
+	xajax_DispInputAnswer(MondaiNo);
+
+
+
+}
+
+
+
+
+
+
+
+function restart_mondai()
+
+{
+
+
+
+	xajax_ReStart();
+
+
+
+}
+
+
+
+function answer()
+
+{
+
+	window.open('answer.php', 'answer', "width=600,height=600,left=400,scrollbars=yes");
+
+
+
+
+
+}
+
+function ne()
+
+{
+
+
+
+
+
+	if (event.keyCode == 13) //Enter13
+
+	{
+
+	//	ne_button();
+
+
+
+	}
+
+	else
+
+		document.form1.next.value = "false"
+
+}
+
+function ne_button()
+
+{
+
+	clearTimeout(myTimer);
+
+	document.form1.next.value = "true"
+
+	xajax_Syutudai(xajax.getFormValues(form1));
+
+}
+
+
+
+function disp_kotae(No)
+
+{
+
+
+
+		xajax_DispKotae(No);
+
+
+
+}
+
+
+
+function timeCounter(timeC)
+
+{
+
+	timeD = timeC;
+
+
+
+	document.form1.time.value = timeD;
+
+	timeD--;
+
+	myTimer = setTimeout("timeCounter(timeD)",1000);
+
+
+
+	if(timeC<1)
+
+	{
+
+		clearTimeout(myTimer);
+
+		 ne_button();
+
+	}
+
+
+
+
+
+}
+
+
+
+function onOver()
+
+{
+
+
+
+			document.form1.txt0.disabled=false;
+
+
+
+
+
+			document.form1.txt0.focus();
+
+
+
+}
+
+function onOut()
+
+{
+
+
+
+			document.form1.txt0.disabled=true;
+
+
+
+}
+
+
+
+
+
+// --></script>
+
+</head>
+
+<body onload="xajax_InitInput();" style="cursor: default;" text="black" bgcolor="white">
+
+<br>
+
+
+
+<form id="form1" autocomplete="off" name="form1" onsubmit="return false" style="margin:10px;">
+
+<div id="main_area">
+
+	<div id="centercolumn">
+
+<br>
+
+<table style="width: 120%;">
+
+<tbody><tr><td>
+
+<h3><span id="mondai">&nbsp;&nbsp;シェルの特殊変数のうち、1番目の引数が設定される変数は？</span></h3>
+
+<br>
+
+<span id="png"></span>
+
+</td></tr>
+
+<tr><td>
+
+<span id="answer" style="color:blue;">&nbsp;&nbsp;<input type="button" value="入力値" onclick="disp_input_answer(11)">&nbsp;&nbsp;<input type="button" value="正解表示" onclick="disp_seikai(11)"></span>
+
+</td></tr>
+
+<tr><td>
+
+<span id="com"><br>&nbsp;&nbsp;<input type="text" id="txt0" name="txt0" size="35" maxlength="100" style="background-color:#fffaff" value="$1"><font color="red"><b>×</b></font></span>
+
+</td></tr>
+
+<tr><td>
+
+<br>
+
+<span id="next"></span>
+
+</td></tr>
+
+</tbody></table>
+
+</div>
+
+</div>
+
+
+
+<div id="leftcolumn">
+
+<h1><span id="mondai_no">第12</span><span id="mondai_all">/43問</span></h1>
+
+<span id="seitouritu" style="color:#dd0000;font-size:large">正答率：0%</span>
+
+<br><br>
+
+<span id="comment">全問不正解です。。。<br>下の番号をクリックできます。<br></span>
+
+<span id="time"></span>
+
+<br>
+
+<span id="seigo"><a href="#" onclick="disp_kotae('0');"><span id="mondai0" style="">01.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('1');"><span id="mondai1" style="">02.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('2');"><span id="mondai2" style="">03.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('3');"><span id="mondai3" style="">04.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('4');"><span id="mondai4" style="">05.<font color="red">×</font>&nbsp;&nbsp;</span></a><br><a href="#" onclick="disp_kotae('5');"><span id="mondai5" style="">06.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('6');"><span id="mondai6" style="">07.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('7');"><span id="mondai7" style="">08.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('8');"><span id="mondai8" style="">09.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('9');"><span id="mondai9" style="">10.<font color="red">×</font>&nbsp;&nbsp;</span></a><br><a href="#" onclick="disp_kotae('10');"><span id="mondai10" style="">11.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('11');"><span id="mondai11" style="color: black;">12.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('12');"><span id="mondai12">13.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('13');"><span id="mondai13">14.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('14');"><span id="mondai14" style="">15.<font color="red">×</font>&nbsp;&nbsp;</span></a><br><a href="#" onclick="disp_kotae('15');"><span id="mondai15">16.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('16');"><span id="mondai16">17.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('17');"><span id="mondai17">18.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('18');"><span id="mondai18">19.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('19');"><span id="mondai19">20.<font color="red">×</font>&nbsp;&nbsp;</span></a><br><a href="#" onclick="disp_kotae('20');"><span id="mondai20">21.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('21');"><span id="mondai21">22.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('22');"><span id="mondai22">23.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('23');"><span id="mondai23">24.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('24');"><span id="mondai24">25.<font color="red">×</font>&nbsp;&nbsp;</span></a><br><a href="#" onclick="disp_kotae('25');"><span id="mondai25">26.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('26');"><span id="mondai26">27.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('27');"><span id="mondai27">28.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('28');"><span id="mondai28">29.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('29');"><span id="mondai29">30.<font color="red">×</font>&nbsp;&nbsp;</span></a><br><a href="#" onclick="disp_kotae('30');"><span id="mondai30">31.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('31');"><span id="mondai31">32.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('32');"><span id="mondai32">33.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('33');"><span id="mondai33">34.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('34');"><span id="mondai34">35.<font color="red">×</font>&nbsp;&nbsp;</span></a><br><a href="#" onclick="disp_kotae('35');"><span id="mondai35">36.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('36');"><span id="mondai36">37.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('37');"><span id="mondai37">38.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('38');"><span id="mondai38">39.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('39');"><span id="mondai39">40.<font color="red">×</font>&nbsp;&nbsp;</span></a><br><a href="#" onclick="disp_kotae('40');"><span id="mondai40">41.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('41');"><span id="mondai41">42.<font color="red">×</font>&nbsp;&nbsp;</span></a><a href="#" onclick="disp_kotae('42');"><span id="mondai42">43.<font color="red">×</font>&nbsp;&nbsp;</span></a></span>
+
+<br><br>
+
+
+
+<br>
+
+<br>
+
+<span id="finish"><input type="button" value="Finish" onclick="finish_mondai()"></span>&nbsp;&nbsp;<span id="restart"><input type="button" value="Restart" onclick="restart_mondai()"></span>
+
+<br><br>
+
+<span id="desc"></span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<input type="hidden" name="next" value="true">
+
+</form>
+
+
+
+
+
+
+
+
+
+
+<div id="xajaxWork1625971228967" style="display: none; visibility: hidden;"></div></body></html>
