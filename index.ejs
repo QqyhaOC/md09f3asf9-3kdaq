@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--
+ @license
+ Copyright 2022 TomorrowNet Co.,Ltd. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+    <title>粗大ごみ自動受付センター AI受付</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <link href="assets/css/chatbot.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+    <script type="module" src="./assets/js/map.js"></script>
+
+</head>
+
+<body>
+    <!--The div element for the map -->
+    <div id="popup-overlay" class="overlay">
+        <div class="popup-window">
+            <!--
+            <div id="headTitle" class="headTitle">粗大ごみ自動受付センター</div>
+            -->
+            <img style="width: 7%;margin-top: 2px;margin-right: 3px;opacity: 0.5;"src="https://catai.cc/storage/42f5102e-c5f5-465a-9cd5-c0fd69f8de00" id="popup-close" class="close" />
+            <div class="attention">
+                地図に表示されているピン<img style="width:5%;" src="https://catai.cc/storage/00223fd8-e4bd-482e-aa77-9ab6e75769f4">をタップし、<label id="homeDepotText"></label>の位置に移動させてください。
+            </div>
+            <div class="addressArea">
+                <span class="address" id="address"/></span>
+            </div>
+            <div id="map"></div>
+            <div class="wrap">
+                <!--<button id="cancle-button" class="cancle-button">取消</button>--><button id="confirmLocation" class="confirmLocation-button">確定</button>
+            </div>
+        </div>
+        <div class="modal-window" id="agree-modal">
+            <div class="modal-content">
+                <div class="agree-content">
+                    <div class="agree-title"><img style="width:6%;margin:3px;vertical-align:middle;"src="https://catai.cc/storage/aa29407a-172d-4d34-9f3a-860ed9c737bd"/>注意事項</div>
+                    <div class="agree-description" style="text-align:left;">
+                        <span>・収集車が通れない場合、自宅前の道路で収集すことはできません。</span><br/>
+                        <span>・私有地敷地内・私道で収集することはできません。</span><br/>
+                        <span>・自宅前の道路で私有地敷地内・私道に入らずＵターン、切り替えし、通り抜けすることができない場合は自宅前の道路際で収集することはできません。</span><br/>
+                    </div>
+                    <div class="agree-buttons">
+                        <input class="agree-check" type="checkbox" value="true" id="agree-check" />
+                        <button class="agree-button" style="width:70px;padding:10px 0px;" id="agree-button" > 注意事項を確認しました</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display:none">
+        lat: <input type="text" id="lat"/><br>
+        lng: <input type="text" id="lng"/><br>
+        address: <input type="text" id="address"/><br>
+        place_id: <span id="place_id"></span>
+
+        <!-- for Debug -->
+        <button id="showMap">MAP表示</button>
+        <button id="send-message-button">Send Message</button>
+        <button id="reset-button">Reset</button>
+    </div>
+
+    <!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCP0c9IzK9ig4zDe-xAtYhUk-kAhQq4-4c&callback=initMap&v=weekly"
+      defer
+    ></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCP0c9IzK9ig4zDe-xAtYhUk-kAhQq4-4c&v=weekly"
+        defer></script>
+
+
+
+    <script src="./assets/js/chatbot.js"></script>
+
+    <script>
+
+        var CHATBOT_URL = '';
+
+        <% if (botUrl) { %>
+            CHATBOT_URL = '<%- botUrl %>';
+        <% } %>
+
+        document.getElementById('send-message-button').addEventListener('click', function () {
+            sendMessage({
+                text: 'Test'
+            });
+        });
+
+        document.getElementById('reset-button').addEventListener('click', function () {
+            sendMessage({
+                reset: true
+            })
+        })
+
+        $('#confirmLocation').click(function (e) {
+            let loc = {};
+            let address = "";
+
+            loc.lat = parseFloat($('#lat').val());
+            loc.lon = parseFloat($('#lng').val());
+            address = parseFloat($('#address').val());
+            
+            console.log('selected location :', loc);
+
+            $("#popup-overlay").hide();
+
+            sendMessage({
+                text: '確定',
+                data: loc
+            });
+        });
+
+        document.getElementById('showMap').addEventListener('click', function () {
+            $("#popup-overlay").show();
+            initMap();
+        });
+
+        $('#popup-close, #cancle-button').click(function (e) {
+            // $('.overlay').hide('fast'); // Now the pop up is hided.
+            $("#popup-overlay").hide();
+        });
+
+    </script>
+
+</body>
+
+</html>
