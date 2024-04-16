@@ -1,0 +1,6 @@
+# 
+
+# 
+# *.log
+# !exam.log:
+*txt
