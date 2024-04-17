@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ehco "this is the test file just in order for confirming of git ignore"
